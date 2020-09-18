@@ -2,6 +2,7 @@ import React from "react"
 import Layout from "../components/Layout"
 import { graphql } from "gatsby"
 import Projects from "../components/Projects"
+import { FaEgg } from "react-icons/fa"
 
 //Main:
 const ProjectsPage = ({

@@ -12,6 +12,7 @@ export default ({ data }) => {
   //  Destructure Projects:
   const {
     allStrapiProjects: { nodes: projects },
+    allStrapiBlogs: { nodes: blogs },
   } = data
 
   return (
@@ -24,6 +25,7 @@ export default ({ data }) => {
         title="Featured Projects"
         showLink
       ></Projects>
+      <Blogs blogs={blogs} title="latest Articles" showLink></Blogs>
     </Layout>
   )
 }
@@ -50,6 +52,24 @@ export const query = graphql`
           title
           id
         }
+      }
+    }
+    allStrapiBlogs(sort: { fields: date, order: DESC }, limit: 3) {
+      nodes {
+        content
+        slug
+        title
+        desc
+        date(formatString: "MMMM DD, YYYY")
+        id
+        image {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        category
       }
     }
   }
