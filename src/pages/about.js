@@ -3,6 +3,7 @@ import Layout from "../components/Layout"
 import { graphql } from "gatsby"
 import Title from "../components/Title"
 import Image from "gatsby-image"
+import SEO from "../components/SEO"
 
 const About = ({
   data: {
@@ -15,6 +16,7 @@ const About = ({
   // Main:
   return (
     <Layout>
+      <SEO title="About"></SEO>
       <section className="about-page">
         <div className="section-center about-center">
           <Image

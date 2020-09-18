@@ -6,6 +6,8 @@ import Services from "../components/Services"
 import Jobs from "../components/Jobs"
 import Projects from "../components/Projects"
 import Blogs from "../components/Blogs"
+// SEO
+import SEO from "../components/SEO"
 // Main:
 export default ({ data }) => {
   // console.log(data) // Comprobamos que vemos los objects, 2 projects
@@ -17,6 +19,7 @@ export default ({ data }) => {
 
   return (
     <Layout>
+      <SEO title="Home" description="This is our HomePage"></SEO>
       <Hero> </Hero>
       <Services></Services>
       <Jobs></Jobs>
